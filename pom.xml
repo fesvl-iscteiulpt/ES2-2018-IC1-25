@@ -3,5 +3,16 @@
   <groupId>org.iscte-iul.ES2-2018</groupId>
   <artifactId>ES2-2018-IC1-25</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+	<maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <name>ES2-2018-IC1-25</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>javax.mail</groupId>
+  		<artifactId>mail</artifactId>
+  		<version>1.5.0-b01</version>
+  	</dependency>
+  </dependencies>
 </project>
