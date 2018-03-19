@@ -24,7 +24,7 @@ public class FAQDialog extends JDialog {
 
 	public FAQDialog(Component c) {
 		setTitle("Frequently Asked Questions");
-		setSize(800, 500);
+		setSize(1000, 500);
 		setLocationRelativeTo(c);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setResizable(false);
@@ -40,7 +40,15 @@ public class FAQDialog extends JDialog {
 	private void readFAQ() throws FileNotFoundException {
 		Scanner sc = new Scanner(new File("src\\main\\resources\\FAQ\\FAQ.txt"));
 		while (sc.hasNextLine()) {
-			QAs.add(sc.nextLine());
+			String qaString = sc.nextLine();
+			System.out.println(1);
+			System.out.println(qaString);
+			if (qaString.isEmpty()) {
+				System.out.println("sim");
+				System.out.println(qaString);
+				System.out.println("nao");
+				QAs.add(sc.nextLine());
+			}
 		}
 		sc.close();
 	}
@@ -51,7 +59,6 @@ public class FAQDialog extends JDialog {
 
 		for (String QA : QAs) {
 			JLabel l = new JLabel(QA);
-			l.setHorizontalAlignment(JLabel.CENTER);
 			labels.add(l);
 
 			// Creates a little space between labels

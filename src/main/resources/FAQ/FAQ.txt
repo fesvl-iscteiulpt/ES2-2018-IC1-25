@@ -1,5 +1,11 @@
-<html><h3 align=center>Pergunta1</h3> <h4 align=center>Resposta1</h4>
-<html><h3 align=center>Pergunta2</h3> <h4 align=center>Resposta2</h4>
-<html><h3 align=center>Pergunta3</h3> <h4 align=center>Resposta3</h4>
-<html><h3 align=center>Pergunta4</h3> <h4 align=center>Resposta4</h4>
-<html><h3 align=center>Pergunta5</h3> <h4 align=center>Resposta5</h4>
+<html><h2>Questions and Answers</h2>
+
+<html><h3>Why do I need to give my email information?</h3> <h4>Your email address is the only personal information you will submit.<p>In order to be sent helpful information and/or receive information about the progress of the optimization process you have requested through this platform.</p></h4>
+
+<html><h3>I didn’t find the answer to my question. What can I do?</h3> <h4>You can get extra help by contacting the platform administrator by clicking Help -> Contact Administrator and send us an email with your questions.<p>We will answer as soon as possible.</p></h4>
+
+<html><h3>How can the choice of algorithms be made?</h3> <h4>In the optimization process the choice can be made manually (by you), automatically (platform’s choice) or both manual and automatic<p> (platform selects an initial set and you can add more algorithms of your choice).</p></h4>
+
+<html><h3>Is this platform compatible with other operation systems?</h3> <h4>Yes. The developed software can be run on Windows, Linux or Mac operating systems.</h4>
+
+<html><h4>The current software was developed in accordance with 2016/679 regulation of the European Parliament and Council of 27 April 2016 on the protection of<p> individuals with regard to the processing of personal data and on the free movement of such data (General Regulation on the Protection of Data - GDPR).</p></h4>

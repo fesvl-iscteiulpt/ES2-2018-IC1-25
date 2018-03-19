@@ -22,8 +22,10 @@ public class EmailDialog extends JDialog {
 
 	private JTextArea body;
 	private JLabel title;
+	Component c;
 
 	public EmailDialog(Component c) {
+		this.c = c;
 		setTitle("Contact Administrator");
 		setSize(800, 300);
 		setLocationRelativeTo(c);
@@ -41,7 +43,7 @@ public class EmailDialog extends JDialog {
 		// Create title
 		JPanel titlepanel = new JPanel();
 		title = new JLabel();
-		title.setText("<html><h3>If you need extra information or help write us an email</h3>");
+		title.setText("<html><h3>If you need extra information or help, write us an email</h3>");
 		title.setHorizontalAlignment(JLabel.CENTER);
 		titlepanel.add(title);
 		panel.add(titlepanel);
@@ -65,22 +67,22 @@ public class EmailDialog extends JDialog {
 		setButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+
 				if (Email.getInstance().isAccountSetup()) {
 					// Create a new thread that sends the email
 					Thread thread = new Thread(new Runnable() {
 
 						public void run() {
-							Email.getInstance().sendEmailToAdmin(body.getText());
+							Email.getInstance().sendEmailToAdmins(body.getText());
 						}
 					});
 					thread.start();
 					dispose();
-				} else {
-					GUI.showEmailSetup();
-					System.out.println("no mail setup");
-				}
+				} else
+					new EmailSetupDialog(c);
 			}
 		});
+
 		getRootPane().setDefaultButton(setButton);
 
 		JPanel buttonPane = new JPanel();

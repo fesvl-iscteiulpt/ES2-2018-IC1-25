@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<XML>	
+	<Administrators>
+		<Administrator Name="Nome1" email="teste1@mail.com"/>
+		<Administrator Name="Nome2" email="teste2@mail.com"/>
+	</Administrators>
+	<Paths>
+		<jMetalPath>/users/abc/def</jMetalPath>
+		<jarsPath>/users/xyz/kyw</jarsPath>
+	</Paths>	
+</XML>

@@ -1,4 +1,11 @@
-<?xml version="1.0"?>
-<config>
-	<administratorEmail>ritapiriquitas@gmail.com</administratorEmail>
-</config>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<XML>	
+	<Administrators>
+		<Administrator Name="Filipe Larga" email="fesvl@iscte-iul.pt" />
+		<Administrator Name="Rita Gonçalves" email="ritapiriquitas@gmail.com" />
+	</Administrators>
+	<Paths>
+		<Path1></Path1>
+		<Path2></Path2>
+	</Paths>	
+</XML>
