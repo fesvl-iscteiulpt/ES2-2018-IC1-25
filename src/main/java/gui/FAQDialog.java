@@ -41,12 +41,7 @@ public class FAQDialog extends JDialog {
 		Scanner sc = new Scanner(new File("src\\main\\resources\\FAQ\\FAQ.txt"));
 		while (sc.hasNextLine()) {
 			String qaString = sc.nextLine();
-			System.out.println(1);
-			System.out.println(qaString);
 			if (qaString.isEmpty()) {
-				System.out.println("sim");
-				System.out.println(qaString);
-				System.out.println("nao");
 				QAs.add(sc.nextLine());
 			}
 		}

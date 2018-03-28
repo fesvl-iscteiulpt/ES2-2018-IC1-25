@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<XML>	
+<CONFIG>	
 	<Administrators>
 		<Administrator Name="Filipe Larga" email="fesvl@iscte-iul.pt" />
 		<Administrator Name="Rita Gonçalves" email="ritapiriquitas@gmail.com" />
@@ -8,4 +8,4 @@
 		<Path1></Path1>
 		<Path2></Path2>
 	</Paths>	
-</XML>
+</CONFIG>

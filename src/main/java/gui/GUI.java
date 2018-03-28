@@ -23,12 +23,15 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.xml.sax.SAXException;
 
-import util.ConfigManager;
+import util.XMLManager;
 import util.Email;
 
 public class GUI {
@@ -148,24 +151,16 @@ public class GUI {
 
 		VariablesPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Variables"));
 
-		table.setModel(new javax.swing.table.DefaultTableModel(new Object[][] { { null, null }, { null, null },
-				{ null, null }, { null, null }, { null, null }, { null, null }, { null, null }, { null, null },
-				{ null, null }, { null, null }, { null, null } }, new String[] { "Rules", "Values" }) {
-			Class[] types = new Class[] { java.lang.String.class, java.lang.String.class };
+		table.setModel(new DefaultTableModel(new Object[][] { { null, null } },
+				new String[] { "Rules", "Type", "Min", "Max" }));
 
-			public Class getColumnClass(int columnIndex) {
-				return types[columnIndex];
-			}
-		});
+		setTableRows(10);
+
 		scrollPane.setViewportView(table);
-		if (table.getColumnModel().getColumnCount() > 0) {
-			table.getColumnModel().getColumn(0).setResizable(false);
-			table.getColumnModel().getColumn(1).setResizable(false);
-		}
 
 		rowsLabel.setText("Rows:");
 
-		rowsTextField.setText("30");
+		rowsTextField.setText("10");
 		typeComboBox.setModel(
 				new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -213,10 +208,9 @@ public class GUI {
 										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addContainerGap()));
 
-		javax.swing.GroupLayout VariablesPanelLayout = new javax.swing.GroupLayout(VariablesPanel);
+		GroupLayout VariablesPanelLayout = new GroupLayout(VariablesPanel);
 		VariablesPanel.setLayout(VariablesPanelLayout);
-		VariablesPanelLayout.setHorizontalGroup(VariablesPanelLayout
-				.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+		VariablesPanelLayout.setHorizontalGroup(VariablesPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addGroup(VariablesPanelLayout.createSequentialGroup().addGap(18, 18, 18)
 						.addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 268,
 								javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -278,6 +272,12 @@ public class GUI {
 		frame.pack();
 	}
 
+	private void setTableRows(int i) {
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		for (int x = 0; x < i; x++)
+			model.addRow(new Object[] { "", "", "" });
+	}
+
 	private JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.add(Box.createHorizontalGlue()); // Makes the menus appear at the right edge of the menu bar
@@ -325,10 +325,18 @@ public class GUI {
 	}
 
 	public static void main(String[] args) {
-		GUI g = new GUI();
+		// GUI g = new GUI();
+		// try {
+		// XMLManager.getInstance().loadConfig(XMLManager.getConfigFile());
+		// } catch (XPathExpressionException | ParserConfigurationException |
+		// SAXException | IOException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 		try {
-			ConfigManager.getInstance().loadConfig(ConfigManager.getConfigFile());
-		} catch (XPathExpressionException | ParserConfigurationException | SAXException | IOException e) {
+			XMLManager.getInstance().saveProblem("src\\main\\resources\\XML Files\\problem_save.xml");
+		} catch (ParserConfigurationException | SAXException | IOException | TransformerFactoryConfigurationError
+				| TransformerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
