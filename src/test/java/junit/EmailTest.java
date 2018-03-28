@@ -10,15 +10,15 @@ import javax.xml.xpath.XPathExpressionException;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
-import util.ConfigManager;
 import util.Email;
+import util.XMLManager;
 
 class EmailTest {
 
 	@Test
 	void testSendEmailToAdmins()
 			throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
-		ConfigManager.getInstance().loadConfig("src/test/resources/config_test.xml");
+		XMLManager.getInstance().loadConfig("src/test/resources/config_test.xml");
 		Email.getInstance().sendEmailToAdmins("JUnit test email");
 	}
 

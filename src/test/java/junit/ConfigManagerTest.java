@@ -10,14 +10,14 @@ import javax.xml.xpath.XPathExpressionException;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 
-import util.ConfigManager;
 import util.Email;
+import util.XMLManager;
 
-class ConfigManagerTest {
+class XMLManagerTest {
 
 	@Test
 	void testLoadConfig() throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
-		ConfigManager.getInstance().loadConfig("src/test/resources/config_test.xml");
+		XMLManager.getInstance().loadConfig("src/test/resources/config_test.xml");
 		assertEquals("teste1@mail.com", Email.getInstance().getAdministrators().get(0));
 		assertEquals("teste2@mail.com", Email.getInstance().getAdministrators().get(1));
 	}
